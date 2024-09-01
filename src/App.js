@@ -1,7 +1,13 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Form() {
   const emailRef = useRef(null);
+
+  useEffect(() => {
+    if (emailRef.current) {
+      emailRef.current.focus();
+    }
+  }, []);
 
   const handleFocus = () => {
     if (emailRef.current) {
